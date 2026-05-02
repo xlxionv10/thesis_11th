@@ -621,7 +621,7 @@ class BoschEnv(object):
         t = self.period_index
 
         # --- QUANTITY (Look across a 2-day horizon) ---
-        lookahead_end = min(t + 2, self.num_periods)
+        lookahead_end = min(t + 1, self.num_periods)
         if lookahead_end > t:
             two_day_demand = np.sum(self.demand[t:lookahead_end], axis=0).astype(np.float32)
         else:
